@@ -188,8 +188,16 @@
     .opt input{margin-right:10px;accent-color:var(--orange)}
     .fields{display:grid;gap:12px}
     .fields input,.fields select,.fields textarea{width:100%;border:1px solid #c8c8c8;border-radius:16px;padding:14px 15px;background:#fff;color:#111}
-    .consent{display:grid;grid-template-columns:22px 1fr;gap:10px;font-size:13px;color:#555;margin:12px 0}
+    .consent{display:grid;grid-template-columns:22px 1fr;gap:10px;font-size:13px;color:#555;margin:12px 0;text-align:left}
     .consent input{margin-top:2px;accent-color:var(--orange)}
+    .consent a{color:#111;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;font-weight:700}
+    .data-warning{margin:12px 0 0;padding:12px 14px;border:1px solid rgba(255,133,39,.35);background:#fff4ec;border-radius:16px;color:#4a2a14;font-size:13px;text-align:left}
+    .data-warning b{color:#111}
+    .privacy-box{margin-top:22px}
+    .privacy-box .details-body{text-align:left}
+    .privacy-box ul{margin:10px 0 0;padding-left:20px;color:#2f2f2f}
+    .privacy-box li{margin:6px 0}
+    .privacy-box a{color:#111;text-decoration:underline;text-underline-offset:3px;font-weight:700}
     .quiz-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
     .quiz .btn{box-shadow:0 10px 24px rgba(255,109,31,.22)}
     .quiz .btn.ghost{background:#fff;color:#111;border:1px solid #bdbdbd;box-shadow:none}
@@ -594,11 +602,27 @@
               </select>
               <textarea name="comment" rows="4" placeholder="Можно коротко: город, специализация, клиника, что хотите получить"></textarea>
             </div>
-            <label class="consent"><input type="checkbox" name="personal_data_consent" required><span>Я согласен(на) на обработку персональных данных для ответа на заявку. WhatsApp принадлежит Meta Platforms Inc., признанной экстремистской организацией, деятельность которой запрещена на территории РФ.</span></label>
+            <label class="consent"><input type="checkbox" name="personal_data_consent" required><span>Я согласен(на) на обработку персональных данных для ответа на заявку и подбора формата участия. <a href="#privacy-policy">Политика обработки персональных данных</a>. WhatsApp принадлежит Meta Platforms Inc., признанной экстремистской организацией, деятельность которой запрещена на территории РФ.</span></label>
+            <div class="data-warning"><b>Пожалуйста, не указывайте диагнозы, жалобы, сведения о здоровье и медицинские данные пациентов.</b> Форма предназначена для B2B-заявок от врачей, клиник, маркетологов и партнёров.</div>
             <div class="quiz-actions"><button type="button" class="btn ghost" data-prev>Назад</button><button type="submit" class="btn lime">Отправить заявку</button></div>
             <div class="msg" id="formMsg"></div>
           </div>
         </form>
+      </div>
+      <div class="wrap privacy-box" id="privacy-policy">
+        <details>
+          <summary>Политика обработки персональных данных</summary>
+          <div class="details-body">
+            <p><b>Оператор данных:</b> проект «Архитекторы здоровой улыбки» / Валентина Инкина. Данные собираются только для связи по заявке, подбора формата участия и ответа на вопрос.</p>
+            <p><b>Какие данные можно оставить:</b> имя, телефон, Telegram, WhatsApp*, роль, город, специализация, название клиники, комментарий по коммерческой задаче.</p>
+            <p><b>Цель обработки:</b> обработать входящую B2B-заявку, связаться с заявителем, предложить подходящий формат участия, подготовить расчёт или консультацию по медиапакету.</p>
+            <p><b>Что не нужно отправлять:</b> диагнозы, медицинские документы, сведения о здоровье, жалобы пациентов, данные несовершеннолетних и любую медицинскую информацию третьих лиц.</p>
+            <p><b>Передача сервисам:</b> заявка может технически передаваться через сервис приёма форм SaveForm и почтовые/мессенджер-сервисы, необходимые для ответа на обращение.</p>
+            <p><b>Срок хранения:</b> данные хранятся столько, сколько нужно для обработки заявки и последующей деловой коммуникации, либо до отзыва согласия.</p>
+            <p><b>Как отозвать согласие:</b> напишите в тот же канал связи, через который велась коммуникация, с просьбой удалить контактные данные из переписки и рабочих таблиц проекта.</p>
+            <p class="fine">*Instagram, Facebook и WhatsApp принадлежат Meta Platforms Inc., признанной экстремистской организацией, деятельность которой запрещена на территории РФ. Этот блок является рабочей версией политики для лендинга и не заменяет индивидуальную юридическую проверку.</p>
+          </div>
+        </details>
       </div>
     </section>
   </main>
@@ -611,7 +635,7 @@
         <p class="fine">Проект публикует информационный и просветительский контент. Материалы помогают формировать доверие и обращения, но не являются рекламой медицинских услуг, медицинской консультацией или обещанием результата лечения.</p>
       </div>
       <div class="mini-links">
-        <a href="#formats">Форматы</a><a href="#replace">Заявки</a><a href="#quiz">Заявка</a><a href="#top">Наверх</a>
+        <a href="#formats">Форматы</a><a href="#replace">Заявки</a><a href="#quiz">Заявка</a><a href="#privacy-policy">Персональные данные</a><a href="#top">Наверх</a>
       </div>
     </div>
   </footer>
