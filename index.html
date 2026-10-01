@@ -57,7 +57,11 @@
     {"@type":"Question","name":"Я не умею говорить на камеру","acceptedAnswer":{"@type":"Answer","text":"Это разговор, а не выступление. Ведущая ведёт беседу по согласованному плану, лишнее убирает монтаж."}},
     {"@type":"Question","name":"Сколько времени нужно от врача","acceptedAnswer":{"@type":"Answer","text":"Около двух часов: короткое знакомство и запись интервью. Подготовка, монтаж и публикации — работа проекта."}},
     {"@type":"Question","name":"Это реклама медицинских услуг","acceptedAnswer":{"@type":"Answer","text":"Нет. Формат просветительский: врач объясняет свой подход, результаты лечения не обещаются."}},
-    {"@type":"Question","name":"Кому принадлежат материалы","acceptedAnswer":{"@type":"Answer","text":"Врач получает выпуск и 30 роликов и использует их без ограничений на своих площадках."}}
+    {"@type":"Question","name":"Кому принадлежат материалы","acceptedAnswer":{"@type":"Answer","text":"Врач получает выпуск и 30 роликов и использует их без ограничений на своих площадках."}},
+    {"@type":"Question","name":"Что согласовывается перед публикацией?","acceptedAnswer":{"@type":"Answer","text":"До записи мы согласовываем тему и направление разговора. После производства участник получает материалы на просмотр и может одним сообщением собрать фактические и технические замечания. Мы исправляем ошибки и учитываем разумные корректировки в рамках редакционной системы проекта. После этого материалы выходят по согласованному графику. Если требуется новая творческая концепция, альтернативные версии или существенная пересборка уже подготовленного материала, такой объём оценивается отдельно."}},
+    {"@type":"Question","name":"Можно ли самому определять монтаж каждого ролика?","acceptedAnswer":{"@type":"Answer","text":"Да, такой формат возможен. Базовый пакет предполагает редакционный монтаж команды проекта: мы самостоятельно выбираем законченные смысловые фрагменты и доводим их до готового вида. Если вы хотите самостоятельно определять начало и окончание каждого ролика, выбирать монтажные планы, заказывать несколько версий или подробно режиссировать пакет материалов, мы рассматриваем это как индивидуальный продакшен и заранее рассчитываем дополнительный объём."}},
+    {"@type":"Question","name":"Что считается правкой, а что дополнительной работой?","acceptedAnswer":{"@type":"Answer","text":"Ошибка в имени, титре, факте, звуке, повторе, оборванном слове или технической склейке исправляется в рамках производства. Изменение уже корректно сделанного материала по индивидуальному творческому предпочтению может потребовать дополнительной работы. Если такая ситуация возникает, мы сообщаем об этом до начала переработки."}},
+    {"@type":"Question","name":"Сколько длится производственный цикл?","acceptedAnswer":{"@type":"Answer","text":"Базовый срок полного цикла — около 30 дней после записи при работе в редакционном формате проекта. Существенные дополнительные корректировки или индивидуальная режиссура могут увеличивать срок производства."}}
   ]
 }
 </script>
@@ -475,13 +479,94 @@
       .nav .brand{font-size:18px}
     }
 
+    /* PARTICIPATION MODEL: production cycle, editorial vs individual */
+    .cycle{background:radial-gradient(circle at 14% 18%,rgba(255,133,39,.12),transparent 28%)}
+    .cycle .section-head,.model .section-head{max-width:940px}
+    .pipeline{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;counter-reset:step}
+    .phase{background:linear-gradient(180deg,#f2f2f2,#d8d8d8);color:#111;border:1px solid rgba(255,255,255,.85);border-radius:28px;padding:24px 22px 16px;box-shadow:var(--shadow-soft);position:relative}
+    .phase-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding-bottom:14px;margin-bottom:6px;border-bottom:2px solid var(--orange)}
+    .phase-head b{font-family:var(--display);font-size:22px;line-height:1.05;text-transform:uppercase;letter-spacing:-.03em;font-weight:900}
+    .phase-head span{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#b64500;font-weight:800;white-space:nowrap}
+    .steps{list-style:none;margin:0;padding:0}
+    .steps li{position:relative;padding:10px 0 10px 44px;color:#262626;font-size:15px;line-height:1.4;min-height:48px;display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+    .steps li:before{counter-increment:step;content:counter(step);position:absolute;left:0;top:9px;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:#111;color:#fff;font-family:var(--display);font-weight:900;font-size:13px;z-index:1}
+    .steps li:not(:last-child):after{content:"";position:absolute;left:14px;top:39px;bottom:-9px;width:2px;background:rgba(255,133,39,.55)}
+    .steps li.ai:before{background:#2a2a2a;box-shadow:inset 0 0 0 2px var(--orange)}
+    .steps li.human:before{background:var(--orange);color:#111}
+    .tag{display:inline-block;padding:2px 8px;border-radius:999px;font-size:10.5px;font-style:normal;text-transform:uppercase;letter-spacing:.08em;font-weight:800;line-height:1.6;white-space:nowrap;background:#111;color:var(--orange3)}
+    .tag.h{background:var(--orange);color:#111}
+    .ai-note{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center;margin-top:18px;padding:20px 24px;border-radius:24px;background:#141414;border:1px solid rgba(255,133,39,.45)}
+    .ai-note b{font-family:var(--display);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--orange3);white-space:nowrap}
+    .ai-note p{margin:0;color:#e2e2e2;font-size:16px;line-height:1.55}
+    .value-grid{margin-top:22px}
+    .value-grid .channel-card p{line-height:1.6}
+    .model-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:stretch}
+    .model-card{border-radius:32px;padding:clamp(24px,3.4vw,38px);display:flex;flex-direction:column;position:relative;overflow:hidden}
+    .model-card .label{font-family:var(--display);font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:800}
+    .model-card h3{font-family:var(--display);font-size:clamp(24px,2.8vw,34px);line-height:1.02;text-transform:uppercase;letter-spacing:-.04em;margin:10px 0 18px;font-weight:900;overflow-wrap:normal;hyphens:manual}
+    .model-price{display:block;font-family:var(--display);font-weight:900;line-height:1;letter-spacing:-.04em;white-space:nowrap;margin:0 0 20px;font-size:clamp(32px,4.2vw,52px)}
+    .model-card p{margin:0 0 12px;font-size:16px;line-height:1.6}
+    .model-card p:last-child{margin-bottom:0}
+    .model-card.editorial{background:linear-gradient(180deg,#f4f4f4,#d9d9d9);color:#111;border:1px solid rgba(255,255,255,.9);box-shadow:var(--shadow);border-top:6px solid var(--orange)}
+    .model-card.editorial .label{color:#b64500}
+    .model-card.editorial .model-price{color:#111}
+    .model-card.editorial .model-price small{color:var(--orange2)}
+    .model-card.editorial p{color:#333}
+    .model-card.editorial .stress{margin-top:auto;padding:14px 16px;border-radius:16px;background:#fff4ec;border:1px solid rgba(255,133,39,.4);color:#4a2a14;font-size:15px}
+    .model-card.custom{background:linear-gradient(180deg,#171717,#1f1f1f);color:#fff;border:1px solid rgba(255,255,255,.16);border-top:6px solid #bdbdbd}
+    .model-card.custom .label{color:#cfcfcf}
+    .model-card.custom .model-price{align-self:flex-start;color:#f0f0f0;font-size:clamp(17px,1.8vw,21px);letter-spacing:.02em;text-transform:uppercase;white-space:normal;padding:12px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.05)}
+    .model-card.custom p{color:#d6d6d6}
+    .model-card.custom .stress{margin-top:auto;padding:14px 16px;border-radius:16px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.16);color:#ececec;font-size:15px}
+    .model-bridge{max-width:860px;margin:28px auto;text-align:center;font-family:var(--display);font-size:clamp(19px,2.2vw,25px);line-height:1.35;letter-spacing:-.01em;color:#fff;font-weight:500}
+    .model-bridge b{color:var(--orange3);font-weight:700}
+    .scope-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+    .scope-box{border-radius:30px;padding:28px;background:linear-gradient(180deg,#151515,#1e1e1e);border:1px solid rgba(255,255,255,.12)}
+    .scope-box.quality{border-color:rgba(255,133,39,.55);box-shadow:0 0 0 1px rgba(255,133,39,.12)}
+    .scope-box h3{font-family:var(--display);font-size:clamp(22px,2.4vw,28px);line-height:1.02;text-transform:uppercase;margin:0 0 6px;letter-spacing:-.035em;font-weight:900;overflow-wrap:normal}
+    .scope-box .scope-sub{display:block;color:#bdbdbd;font-size:14px;margin-bottom:18px}
+    .scope-box.quality .scope-sub{color:var(--orange3)}
+    .scope-box .checklist li{line-height:1.5}
+    .scope-box.extra .checklist li:before{content:"+";color:#cfcfcf}
+    .scope-foot{max-width:860px;margin:22px auto 0;text-align:center;color:#cfcfcf;font-size:16px;line-height:1.6}
+    .term-band{display:grid;grid-template-columns:auto 1fr;gap:clamp(20px,4vw,44px);align-items:center;margin-top:34px;padding:clamp(24px,4vw,40px);border-radius:32px;background:linear-gradient(145deg,#f4f4f4,#d8d8d8);color:#111;border:1px solid rgba(255,255,255,.9);box-shadow:var(--shadow)}
+    .term-num{text-align:center;padding:20px 26px;border-radius:24px;background:#111;color:#fff;min-width:170px}
+    .term-num b{display:block;font-family:var(--display);font-size:clamp(44px,6vw,72px);line-height:.9;letter-spacing:-.05em;color:var(--orange3);font-weight:900;white-space:nowrap}
+    .term-num span{display:block;margin-top:8px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:#ddd}
+    .term-band .eyebrow{color:#b64500}
+    .term-band h3{font-family:var(--display);font-size:clamp(24px,3vw,38px);line-height:1;text-transform:uppercase;letter-spacing:-.04em;margin:8px 0 14px;font-weight:900;overflow-wrap:normal}
+    .term-band p{margin:0;color:#353535;font-size:16px;line-height:1.6}
+    .after-note{color:#ededed;margin:18px 0 0;padding:14px 16px;border-radius:16px;background:rgba(255,133,39,.08);border:1px solid rgba(255,133,39,.35);font-size:15px;line-height:1.55}
+    @media(max-width:980px){
+      .pipeline{grid-template-columns:1fr 1fr}
+      .pipeline .phase:last-child{grid-column:1/-1}
+      .model-grid,.scope-grid{grid-template-columns:1fr}
+    }
+    @media(max-width:680px){
+      .pipeline{grid-template-columns:1fr}
+      .phase{border-radius:22px;padding:20px 18px 12px}
+      .ai-note{grid-template-columns:1fr;gap:8px;padding:18px}
+      .model-card{border-radius:24px}
+      .model-card h3,.scope-box h3,.term-band h3{overflow-wrap:normal;word-break:normal}
+      .model-price{font-size:clamp(30px,9.5vw,40px)}
+      .scope-box{padding:22px 18px;border-radius:22px}
+      .term-band{grid-template-columns:1fr;text-align:center;border-radius:24px}
+      .term-num{min-width:0}
+    }
+    @media(max-width:360px){
+      .model-card{padding:22px 16px}
+      .model-card h3{font-size:21px}
+      .model-card.custom .model-price{font-size:15px}
+      .model-price{font-size:30px}
+    }
+
 </style>
 </head>
 <body>
   <header class="nav">
     <div class="wrap nav-in">
       <a class="brand" href="#top" aria-label="Архитекторы здоровой улыбки — наверх">АРХИТЕКТОРЫ<span class="dot">°</span></a>
-      <nav class="menu" aria-label="Навигация"><a href="#package">Состав и цена</a><a href="#after">После выпуска</a><a href="#how">Как устроено</a><a href="#formats">Сообщество</a></nav>
+      <nav class="menu" aria-label="Навигация"><a href="#package">Состав и цена</a><a href="#model">Формат участия</a><a href="#after">После выпуска</a><a href="#how">Как устроено</a><a href="#formats">Сообщество</a></nav>
       <a class="btn" href="#contact">Связаться</a>
     </div>
   </header>
@@ -520,7 +605,7 @@
           <article class="card"><span class="num">12</span><h3>Площадок</h3><p>Публикации в действующей медиасети проекта. Заголовки, описания и ключевые слова для поиска по имени специалиста и теме выпуска.</p></article>
         </div>
         <div class="compact-price">
-          <div><strong>от 85 000 ₽</strong><p>Базовый цикл производства и размещения. Дополнительные форматы и сложность производства согласуем до начала работы.</p></div>
+          <div><strong>от 85 000 ₽</strong><p>Базовый цикл производства и размещения в <a href="#model" style="color:var(--orange3);border-bottom:1px solid rgba(255,157,67,.5)">редакционном формате проекта</a>. Индивидуальный продакшен и дополнительные форматы рассчитываем до начала работы.</p></div>
           <a class="btn" href="#contact">Обсудить выпуск</a>
         </div>
         <p class="project-note" style="margin:0 auto 14px;max-width:860px;font-size:16px">В смете — только работа над вашим выпуском. Ниже видно, из чего складывается цена.</p>
@@ -548,6 +633,109 @@
         </div></details>
       </div>
     </section>
+    <section id="cycle" class="cycle">
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow">Производственный цикл</div><h2>Почему полный цикл начинается от&nbsp;<span class="money">85 000 ₽</span></h2>
+          <p class="sub">Мы собрали производство в единую систему: один разговор превращается в большой выпуск, 30 коротких видео и месяц информационного присутствия.</p>
+        </div>
+        <div class="pipeline">
+          <div class="phase">
+            <div class="phase-head"><b>Подготовка и запись</b><span>этап 1 →</span></div>
+            <ol class="steps">
+              <li>Редакционное исследование героя</li>
+              <li>Сценарий и подготовка</li>
+              <li>Запись до 120 минут</li>
+              <li>Монтаж полного выпуска</li>
+            </ol>
+          </div>
+          <div class="phase">
+            <div class="phase-head"><b>Короткие форматы</b><span>этап 2 →</span></div>
+            <ol class="steps">
+              <li>Поиск 30 самостоятельных смысловых фрагментов</li>
+              <li class="ai">AI-нарезка <em class="tag">инструмент</em></li>
+              <li class="human">Ручная проверка начала и окончания каждого ролика <em class="tag h">редактор</em></li>
+              <li>Оформление и финальные карточки</li>
+              <li>Сопроводительные тексты</li>
+            </ol>
+          </div>
+          <div class="phase">
+            <div class="phase-head"><b>Выход и отчёт</b><span>этап 3</span></div>
+            <ol class="steps">
+              <li>SEO-заголовки и описания</li>
+              <li>Адаптация под площадки</li>
+              <li>Планирование публикаций</li>
+              <li>Размещение в медиасети</li>
+              <li>Контроль выхода</li>
+              <li>Итоговый отчёт</li>
+            </ol>
+          </div>
+        </div>
+        <div class="ai-note"><b>ИИ — инструмент</b><p>Автоматизация ускоряет техническую часть: черновую нарезку, расшифровку, подготовку вариантов. Смысловой отбор, границы каждого ролика, тексты и финальный вид материала проходят редакционную проверку человеком.</p></div>
+        <div class="channel-grid value-grid">
+          <div class="channel-card"><b>Почему базовая цена такая</b><p>Цена базового цикла ниже стоимости сборки аналогичного производства из отдельных специалистов благодаря накопленной инфраструктуре проекта, единой редакционной системе, шаблонам производства, автоматизации и собственному информационному полю.</p><p>Участник оплачивает производство своего материала. Два года развития медиасети, накопленный архив, связи между выпусками и сама инфраструктура проекта отдельно в счёт не включаются.</p></div>
+          <div class="channel-card"><b>Разговор начинается не с пустого листа</b><p>За проектом уже существует медиатека, опыт предыдущих интервью, профессиональные связи и понимание тем, которые волнуют врачей, пациентов и руководителей клиник.</p><p>Эта среда помогает задавать более глубокие вопросы и связывать новый выпуск с уже существующим информационным полем. Каждый материал увеличивает количество публикаций, по которым специалиста можно найти, и создаёт долгосрочное информационное присутствие.</p></div>
+        </div>
+      </div>
+    </section>
+    <section id="model" class="model">
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow">Модель участия</div><h2>Редакционный формат или индивидуальный продакшен</h2>
+          <p class="sub">Оба варианта возможны. Они отличаются не качеством результата, а тем, кто принимает творческие решения и сколько ручной работы требует пакет материалов.</p>
+        </div>
+        <div class="model-grid">
+          <article class="model-card editorial">
+            <span class="label">Базовая модель</span>
+            <h3>Редакционный формат проекта</h3>
+            <span class="model-price"><small>от</small> 85 000 ₽</span>
+            <p>Участник приходит в уже работающую систему «Архитекторов здоровой улыбки». Команда проекта отвечает за сценарий, редакционную логику, монтаж, визуальную систему, короткие форматы, тексты и распространение.</p>
+            <p>Мы учитываем пожелания героя и исправляем объективные недостатки. Финальные творческие решения принимаются внутри редакционной системы проекта.</p>
+            <p class="stress">Именно такой подход позволяет сохранить большой объём производства при базовой стоимости участия.</p>
+          </article>
+          <article class="model-card custom">
+            <span class="label">По запросу участника</span>
+            <h3>Индивидуальный продакшен</h3>
+            <span class="model-price">Индивидуальный расчёт</span>
+            <p>Подходит, если участнику необходим собственный режиссёрский подход: индивидуальная визуальная система, ручное определение точек монтажа, альтернативные версии роликов, дополнительные циклы согласований, персональная адаптация большого количества материалов или работа по корпоративному брендбуку.</p>
+            <p class="stress">Стоимость рассчитывается после оценки дополнительного объёма производства.</p>
+          </article>
+        </div>
+        <p class="model-bridge">Базовая стоимость возможна благодаря <b>единой редакционной и производственной системе</b> проекта. Индивидуальная режиссура увеличивает объём ручной работы и рассчитывается отдельно.</p>
+        <div class="scope-grid">
+          <div class="scope-box quality"><h3>Контроль качества</h3><span class="scope-sub">Входит в базовый цикл — это ответственность проекта за результат</span>
+            <ul class="checklist">
+              <li>Исправление технических ошибок.</li>
+              <li>Устранение случайных повторов.</li>
+              <li>Исправление фамилий, должностей, титров и фактических ошибок.</li>
+              <li>Исправление оборванных слов и неудачных технических склеек.</li>
+              <li>Проверка звука и изображения.</li>
+              <li>Разумное согласование готового выпуска и коротких роликов.</li>
+              <li>Один консолидированный этап корректировок после просмотра.</li>
+            </ul>
+          </div>
+          <div class="scope-box extra"><h3>Индивидуальная режиссура</h3><span class="scope-sub">Отдельный производственный объём, рассчитывается заранее</span>
+            <ul class="checklist">
+              <li>Повторная пересборка уже готовых роликов по личным предпочтениям.</li>
+              <li>Изменение точек начала и окончания большого количества роликов после подготовки первой версии.</li>
+              <li>Несколько альтернативных монтажных версий одного ролика.</li>
+              <li>Постоянное переключение планов и индивидуальная покадровая режиссура.</li>
+              <li>Отдельная визуальная система под корпоративный бренд участника вместо редакционной системы проекта.</li>
+              <li>Несколько вариантов афиш и дизайна для выбора.</li>
+              <li>Повторные циклы согласований после внесённого согласованного пакета правок.</li>
+              <li>Ручная переработка всего массива из 30 роликов под индивидуальные указания.</li>
+            </ul>
+          </div>
+        </div>
+        <p class="scope-foot">Мы заинтересованы в том, чтобы выпуск получился сильным и герой был им доволен. Границы базового цикла нужны для того, чтобы большой объём работы оставался экономически устойчивым и одинаково качественным для всех участников.</p>
+        <div class="term-band">
+          <div class="term-num"><b>≈30</b><span>дней после записи</span></div>
+          <div>
+            <div class="eyebrow">Сроки</div>
+            <h3>Производственный цикл — около 30 дней</h3>
+            <p>Базовый срок полного цикла — около 30 дней после записи при работе в редакционном формате проекта. В него входят основной выпуск, короткие ролики, оформление, тексты, подготовка публикаций и запуск распространения. Существенные дополнительные корректировки или индивидуальная режиссура могут увеличивать срок производства.</p>
+          </div>
+        </div>
+      </div>
+    </section>
     <section id="after">
       <div class="wrap">
         <div class="section-head"><div class="eyebrow">Что происходит дальше</div><h2>Работа начинается<br>после записи</h2>
@@ -562,19 +750,31 @@
         <div class="replace-grid" style="margin-top:22px">
           <div class="replace-box good"><h3>Что входит</h3>
             <ul class="checklist">
-              <li>Контент для ваших социальных сетей: 30 роликов с оформлением и сопроводительными текстами.</li>
-              <li>Публикации, формирующие поисковое присутствие врача и клиники по имени и теме выпуска.</li>
-              <li>Заголовки, описания и ключевые слова для каждой площадки.</li>
+              <li>Один полный редакционный цикл подготовки и производства.</li>
+              <li>Основной выпуск.</li>
+              <li>До 30 коротких вертикальных роликов.</li>
+              <li>Редакционная проверка роликов после автоматизированной нарезки.</li>
+              <li>Оформление выпуска и роликов в визуальной системе проекта.</li>
+              <li>Тексты и SEO-подготовка: заголовки, описания и ключевые слова для каждой площадки.</li>
+              <li>Распространение в медиасети проекта — публикации, формирующие цифровой след врача и клиники по имени и теме выпуска.</li>
+              <li>Один консолидированный цикл корректировок.</li>
+              <li>Исправление объективных технических и фактических ошибок.</li>
               <li>План применения материалов: что поставить в карточку врача, что отдать в соцсети, какой фрагмент уместно отправить человеку после консультации.</li>
             </ul>
           </div>
           <div class="replace-box bad"><h3>Что не входит</h3>
             <ul class="checklist">
-              <li>Постоянное ведение аккаунтов клиники.</li>
-              <li>Техническое SEO вашего сайта.</li>
-              <li>Настройка и ведение рекламных кампаний.</li>
+              <li>Индивидуальная покадровая режиссура участника.</li>
+              <li>Неограниченное количество вариантов монтажа.</li>
+              <li>Повторная пересборка всего пакета роликов после утверждения формата.</li>
+              <li>Разработка отдельной айдентики или адаптация каждого ролика под корпоративный брендбук.</li>
+              <li>Дополнительные раунды творческих корректировок.</li>
+              <li>Индивидуальное ведение социальных сетей клиники.</li>
+              <li>Рекламные кампании.</li>
+              <li>Техническое SEO стороннего сайта.</li>
             </ul>
-            <p style="color:#c9c9c9;margin:18px 0 0;font-size:15px">Это отдельные задачи вашей команды. Мы передаём материал и понятный способ его применить — маркетолог клиники получает не конкурента, а готовое производство.</p>
+            <p style="color:#c9c9c9;margin:18px 0 0;font-size:15px">Часть этих задач можно заказать как <a href="#model" style="color:var(--orange3)">индивидуальный продакшен</a>, часть — работа вашей команды. Мы передаём материал и понятный способ его применить — маркетолог клиники получает не конкурента, а готовое производство.</p>
+            <p class="after-note">Если в процессе появляется задача, выходящая за базовый производственный цикл, мы сначала оцениваем объём и согласуем стоимость. Дополнительная работа не начинается автоматически.</p>
           </div>
         </div>
       </div>
@@ -598,7 +798,7 @@
           <div class="flow-item"><h3>Знакомство</h3><p>Короткий разговор о специалисте и клинике. Выбираем тему, формат и состав выпуска.</p></div>
           <div class="flow-item"><h3>Подготовка</h3><p>Редакционное исследование, концепция и сценарный план. Вопросы согласуем заранее — неожиданных тем на записи не будет.</p></div>
           <div class="flow-item"><h3>Запись</h3><p>Онлайн-интервью до 120 минут с ведущей проекта. Ничего специально готовить и учить не нужно.</p></div>
-          <div class="flow-item"><h3>Производство и выход</h3><p>Монтаж, оформление и согласование с вами. Дальше — публикации по графику, который мы определяем вместе.</p></div>
+          <div class="flow-item"><h3>Производство и выход</h3><p>Монтаж, оформление и просмотр материалов с одним консолидированным этапом корректировок. Дальше — публикации по графику, который мы определяем вместе.</p></div>
         </div>
       </div>
     </section>
@@ -637,7 +837,7 @@
       <div class="wrap">
         <div class="section-head"><div class="eyebrow">Частые вопросы</div><h2>О чём обычно<br>спрашивают</h2></div>
         <details><summary>Я не умею говорить на камеру</summary><div class="details-body">
-          <p>Это не выступление, а разговор. Ведущая ведёт беседу по заранее согласованному плану, помогает развернуть мысль и возвращает к теме. Всё лишнее убирает монтаж — в выпуск попадает только то, что вы согласовали.</p>
+          <p>Это не выступление, а разговор. Ведущая ведёт беседу по заранее согласованному плану, помогает развернуть мысль и возвращает к теме. Всё лишнее убирает монтаж, а тему и направление разговора мы согласуем с вами заранее.</p>
         </div></details>
         <details><summary>У меня нет на это времени</summary><div class="details-body">
           <p>От вас нужно около двух часов: короткое знакомство и сама запись. Исследование темы, сценарий, монтаж, оформление и публикации — наша работа.</p>
@@ -649,7 +849,16 @@
           <p>Вы получаете готовый выпуск и все 30 роликов и используете их без ограничений: на сайте клиники, в соцсетях, в презентациях и на конференциях. Проект оставляет материалы в открытой медиатеке.</p>
         </div></details>
         <details><summary>Что согласовывается перед публикацией?</summary><div class="details-body">
-          <p>Тема и план вопросов — до записи. Смонтированный выпуск и ролики — до выхода. Публикуем только после вашего подтверждения.</p>
+          <p>До записи мы согласовываем тему и направление разговора. После производства участник получает материалы на просмотр и может одним сообщением собрать фактические и технические замечания. Мы исправляем ошибки и учитываем разумные корректировки в рамках редакционной системы проекта. После этого материалы выходят по согласованному графику. Если требуется новая творческая концепция, альтернативные версии или существенная пересборка уже подготовленного материала, такой объём оценивается отдельно.</p>
+        </div></details>
+        <details><summary>Можно ли самому определять монтаж каждого ролика?</summary><div class="details-body">
+          <p>Да, такой формат возможен. Базовый пакет предполагает редакционный монтаж команды проекта: мы самостоятельно выбираем законченные смысловые фрагменты и доводим их до готового вида. Если вы хотите самостоятельно определять начало и окончание каждого ролика, выбирать монтажные планы, заказывать несколько версий или подробно режиссировать пакет материалов, мы рассматриваем это как индивидуальный продакшен и заранее рассчитываем дополнительный объём.</p>
+        </div></details>
+        <details><summary>Что считается правкой, а что дополнительной работой?</summary><div class="details-body">
+          <p>Ошибка в имени, титре, факте, звуке, повторе, оборванном слове или технической склейке исправляется в рамках производства. Изменение уже корректно сделанного материала по индивидуальному творческому предпочтению может потребовать дополнительной работы. Если такая ситуация возникает, мы сообщаем об этом до начала переработки.</p>
+        </div></details>
+        <details><summary>Сколько длится производственный цикл?</summary><div class="details-body">
+          <p>Базовый срок полного цикла — около 30 дней после записи при работе в редакционном формате проекта. Существенные дополнительные корректировки или индивидуальная режиссура могут увеличивать срок производства.</p>
         </div></details>
       </div>
     </section>
