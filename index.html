@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Архитекторы здоровой улыбки | Экспертный выпуск от 85 000 ₽</title>
-  <meta name="description" content="Медиапроект с историей: 260 выпусков, 40 врачей, 12 площадок. Экспертное интервью, 30 коротких роликов и публикации — от 85 000 ₽.">
+  <title>Архитекторы здоровой улыбки | Экспертный выпуск от 95 000 ₽</title>
+  <meta name="description" content="Медиапроект с историей: 260 выпусков, 40 врачей, 12 площадок. Экспертное интервью, 10–20 коротких роликов и публикации — от 95 000 ₽.">
   <link rel="canonical" href="https://arhismile.github.io/2/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:site_name" content="Архитекторы здоровой улыбки">
   <meta property="og:title" content="Экспертный выпуск и контент для ваших площадок">
-  <meta property="og:description" content="Основной выпуск, 30 коротких роликов и размещение в действующей медиасети проекта. Базовый цикл — от 85 000 ₽.">
+  <meta property="og:description" content="Основной выпуск, 10–20 коротких роликов и размещение в действующей медиасети проекта. Базовый цикл — от 95 000 ₽.">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#ff5b14">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -57,7 +57,7 @@
     {"@type":"Question","name":"Я не умею говорить на камеру","acceptedAnswer":{"@type":"Answer","text":"Это разговор, а не выступление. Ведущая ведёт беседу по согласованному плану, лишнее убирает монтаж."}},
     {"@type":"Question","name":"Сколько времени нужно от врача","acceptedAnswer":{"@type":"Answer","text":"Около двух часов: короткое знакомство и запись интервью. Подготовка, монтаж и публикации — работа проекта."}},
     {"@type":"Question","name":"Это реклама медицинских услуг","acceptedAnswer":{"@type":"Answer","text":"Нет. Формат просветительский: врач объясняет свой подход, результаты лечения не обещаются."}},
-    {"@type":"Question","name":"Кому принадлежат материалы","acceptedAnswer":{"@type":"Answer","text":"Врач получает выпуск и 30 роликов и использует их без ограничений на своих площадках."}},
+    {"@type":"Question","name":"Кому принадлежат материалы","acceptedAnswer":{"@type":"Answer","text":"Врач получает выпуск и все ролики пакета и использует их без ограничений на своих площадках."}},
     {"@type":"Question","name":"Что согласовывается перед публикацией?","acceptedAnswer":{"@type":"Answer","text":"До записи мы согласовываем тему и направление разговора. После производства участник получает материалы на просмотр и может одним сообщением собрать фактические и технические замечания. Мы исправляем ошибки и учитываем разумные корректировки в рамках редакционной системы проекта. После этого материалы выходят по согласованному графику. Если требуется новая творческая концепция, альтернативные версии или существенная пересборка уже подготовленного материала, такой объём оценивается отдельно."}},
     {"@type":"Question","name":"Можно ли самому определять монтаж каждого ролика?","acceptedAnswer":{"@type":"Answer","text":"Да, такой формат возможен. Базовый пакет предполагает редакционный монтаж команды проекта: мы самостоятельно выбираем законченные смысловые фрагменты и доводим их до готового вида. Если вы хотите самостоятельно определять начало и окончание каждого ролика, выбирать монтажные планы, заказывать несколько версий или подробно режиссировать пакет материалов, мы рассматриваем это как индивидуальный продакшен и заранее рассчитываем дополнительный объём."}},
     {"@type":"Question","name":"Что считается правкой, а что дополнительной работой?","acceptedAnswer":{"@type":"Answer","text":"Ошибка в имени, титре, факте, звуке, повторе, оборванном слове или технической склейке исправляется в рамках производства. Изменение уже корректно сделанного материала по индивидуальному творческому предпочтению может потребовать дополнительной работы. Если такая ситуация возникает, мы сообщаем об этом до начала переработки."}},
@@ -560,13 +560,35 @@
       .model-price{font-size:30px}
     }
 
+
+    /* Пакеты */
+    .tariff-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin:30px 0 8px;align-items:stretch}
+    .tariff-card{border-radius:30px;padding:30px 26px;background:linear-gradient(180deg,#151515,#1e1e1e);border:1px solid rgba(255,255,255,.12);display:flex;flex-direction:column;text-align:left}
+    .tariff-card.featured{background:linear-gradient(180deg,#f4f4f4,#d9d9d9);color:#111;border:1px solid rgba(255,255,255,.9);border-top:6px solid var(--orange);box-shadow:var(--shadow)}
+    .tariff-card .label{font-family:var(--display);font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;color:var(--orange3)}
+    .tariff-card.featured .label{color:#b64500}
+    .tariff-card h3{font-family:var(--display);font-size:clamp(22px,2.4vw,28px);line-height:1.04;text-transform:uppercase;letter-spacing:-.035em;font-weight:900;margin:10px 0 14px}
+    .tariff-card .price{font-family:var(--display);font-weight:900;font-size:clamp(28px,3.2vw,40px);line-height:1;letter-spacing:-.04em;white-space:nowrap;margin:0 0 20px}
+    .tariff-card ul{list-style:none;padding:0;margin:0 0 20px;display:grid;gap:10px;font-size:16px;line-height:1.5}
+    .tariff-card li{position:relative;padding-left:22px}
+    .tariff-card li:before{content:"";position:absolute;left:0;top:.5em;width:8px;height:8px;border-radius:50%;background:var(--orange)}
+    .tariff-card .foot{margin-top:auto;font-size:14px;line-height:1.5;color:var(--muted)}
+    .tariff-card.featured .foot{color:#4b4b4b}
+    .addons{display:grid;gap:10px;margin:22px 0 0}
+    .addon{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:15px 22px;border:1px solid var(--line);border-radius:20px;font-size:16px;line-height:1.45;text-align:left}
+    .addon b{white-space:nowrap;font-family:var(--display);font-weight:900}
+    .tariff-sheets{display:grid;gap:10px;margin-top:24px}
+    @media(max-width:980px){
+      .tariff-grid{grid-template-columns:1fr}
+      .addon{flex-direction:column;align-items:flex-start;gap:6px}
+    }
 </style>
 </head>
 <body>
   <header class="nav">
     <div class="wrap nav-in">
       <a class="brand" href="#top" aria-label="Архитекторы здоровой улыбки — наверх">АРХИТЕКТОРЫ<span class="dot">°</span></a>
-      <nav class="menu" aria-label="Навигация"><a href="#package">Состав и цена</a><a href="#model">Формат участия</a><a href="#after">После выпуска</a><a href="#how">Как устроено</a><a href="#formats">Сообщество</a></nav>
+      <nav class="menu" aria-label="Навигация"><a href="#package">Пакеты и цены</a><a href="#model">Формат участия</a><a href="#after">После выпуска</a><a href="#how">Как устроено</a><a href="#formats">Сообщество</a></nav>
       <a class="btn" href="#contact">Связаться</a>
     </div>
   </header>
@@ -601,31 +623,121 @@
         <div class="section-head"><div class="eyebrow">Что вы получаете</div><h2>Один выпуск.<br>Контент для ваших площадок.</h2></div>
         <div class="package-grid">
           <article class="card"><span class="num">01</span><h3>Основной выпуск</h3><p>Индивидуальная тема, сценарий, онлайн-интервью до 120 минут и монтаж. Готовое видео для сайта, карточки специалиста и презентаций.</p></article>
-          <article class="card"><span class="num">30</span><h3>Коротких роликов</h3><p>Вертикальные фрагменты по 15–90 секунд, графическое оформление и сопроводительные тексты. Выходят по графику, который согласуем с вами: можно опубликовать всё сразу, можно распределить по дням.</p></article>
+          <article class="card"><span class="num">20</span><h3>Коротких роликов</h3><p>Вертикальные фрагменты по 15–90 секунд, графическое оформление и сопроводительные тексты. Выходят по графику, который согласуем с вами: можно опубликовать всё сразу, можно распределить по дням.</p></article>
           <article class="card"><span class="num">12</span><h3>Площадок</h3><p>Публикации в действующей медиасети проекта. Заголовки, описания и ключевые слова для поиска по имени специалиста и теме выпуска.</p></article>
         </div>
         <div class="compact-price">
-          <div><strong>от 85 000 ₽</strong><p>Базовый цикл производства и размещения в <a href="#model" style="color:var(--orange3);border-bottom:1px solid rgba(255,157,67,.5)">редакционном формате проекта</a>. Индивидуальный продакшен и дополнительные форматы рассчитываем до начала работы.</p></div>
+          <div><strong>от 95 000 ₽</strong><p>Базовый цикл производства и размещения в <a href="#model" style="color:var(--orange3);border-bottom:1px solid rgba(255,157,67,.5)">редакционном формате проекта</a>. Индивидуальный продакшен и дополнительные форматы рассчитываем до начала работы.</p></div>
           <a class="btn" href="#contact">Обсудить выпуск</a>
         </div>
-        <p class="project-note" style="margin:0 auto 14px;max-width:860px;font-size:16px">В смете — только работа над вашим выпуском. Ниже видно, из чего складывается цена.</p>
-        <details id="expenses"><summary><span>Смета базового цикла — <span class="money">85 000 ₽</span></span></summary><div class="details-body">
-        <div class="cost-sheet" role="table" aria-label="Состав расходов на один выпуск">
-          <div class="cost-table">
-            <div class="cost-row cost-head" role="row"><div role="columnheader">№</div><div role="columnheader">Статья расходов</div><div role="columnheader">Объём</div><div role="columnheader">Сумма</div></div>
-            <div class="cost-row" role="row"><div>1</div><div>Редакционное исследование героя, индивидуальная концепция, структура и сценарный план интервью</div><div>1 комплекс</div><div>1 500 ₽</div></div>
-            <div class="cost-row" role="row"><div>2</div><div>Организация и проведение онлайн-интервью до 120 минут, включая техническую подготовку записи</div><div>1 интервью</div><div>4 000 ₽</div></div>
-            <div class="cost-row" role="row"><div>3</div><div>Монтаж основного выпуска: редакционный отбор, обработка звука и изображения, титры, заставка и оформление</div><div>1 выпуск</div><div>21 500 ₽</div></div>
-            <div class="cost-row" role="row"><div>4</div><div>Отбор и монтаж 30 коротких вертикальных роликов продолжительностью ориентировочно от 15 до 90 секунд</div><div>30 роликов</div><div>30 000 ₽</div></div>
-            <div class="cost-row" role="row"><div>5</div><div>Графическое и текстовое оформление: обложка выпуска, единый шаблон роликов, аннотации и сопроводительные тексты</div><div>1 комплект</div><div>5 000 ₽</div></div>
-            <div class="cost-row" role="row"><div>6</div><div>SEO-подготовка: заголовки, описания, ключевые слова и смысловые связки по имени, теме и экспертности</div><div>1 комплект</div><div>5 000 ₽</div></div>
-            <div class="cost-row" role="row"><div>7</div><div>Информационное размещение вашего выпуска в действующей медиасети проекта: адаптация под каждую площадку, публикация и ведение по согласованному графику</div><div>12 площадок</div><div>9 500 ₽</div></div>
-            <div class="cost-row" role="row"><div>8</div><div>Организационно-продюсерское сопровождение: координация, согласования, редакционное ведение и контроль полного цикла производства</div><div>10% пакета</div><div>8 500 ₽</div></div>
-            <div class="cost-row cost-total" role="row"><div></div><div>Итого</div><div>полный цикл</div><div>85 000 ₽</div></div>
-          </div>
+        <p class="project-note" style="margin:0 auto 14px;max-width:860px;font-size:16px">Три пакета — разный объём коротких форматов и глубина согласований. Ниже видно, из чего складывается каждая цена.</p>
+        <div class="tariff-grid">
+          <article class="tariff-card">
+            <span class="label">Базовый</span>
+            <h3>Выпуск</h3>
+            <span class="price">95 000 ₽</span>
+            <ul>
+              <li>Основной выпуск целиком</li>
+              <li>10 коротких вертикальных роликов</li>
+              <li>Обложки, финальные карточки и тексты</li>
+              <li>Публикация на 12 площадках</li>
+              <li>Один круг правок по всему пакету</li>
+            </ul>
+            <p class="foot">Подходит, если выпуск нужен прежде всего как основной материал, а короткие форматы — поддержка.</p>
+          </article>
+          <article class="tariff-card featured">
+            <span class="label">Чаще всего выбирают</span>
+            <h3>Серия</h3>
+            <span class="price">120 000 ₽</span>
+            <ul>
+              <li>Основной выпуск целиком</li>
+              <li>20 коротких вертикальных роликов</li>
+              <li>Обложки, финальные карточки и тексты</li>
+              <li>Публикация на 12 площадках по графику</li>
+              <li>Один круг правок по всему пакету</li>
+            </ul>
+            <p class="foot">Месяц присутствия на площадках: ролики выходят по согласованному расписанию, а не одним днём.</p>
+          </article>
+          <article class="tariff-card">
+            <span class="label">Индивидуальный продакшен</span>
+            <h3>Авторский</h3>
+            <span class="price">210 000 ₽</span>
+            <ul>
+              <li>Основной выпуск целиком</li>
+              <li>20 роликов с поштучной приёмкой</li>
+              <li>Ручная постановка границ каждого ролика</li>
+              <li>Индивидуальное оформление под материал</li>
+              <li>Два круга правок на каждый ролик</li>
+            </ul>
+            <p class="foot">Для участника, который сам смотрит каждый ролик и хочет принимать монтажные решения вместе с редакцией.</p>
+          </article>
         </div>
-        <p class="cost-source">Стоимость включает налоги. Дополнительные работы рассчитываются отдельно.<br>Доступ к медиасети проекта, её аудитории и накопленной истории публикаций не тарифицируется — в смете учтена только работа по размещению вашего выпуска.</p>
-        </div></details>
+        <div class="addons">
+          <div class="addon"><span>Дополнительный ролик в пакетах «Выпуск» и «Серия»</span><b>4 000 ₽</b></div>
+          <div class="addon"><span>Дополнительный ролик с поштучной приёмкой</span><b>7 000 ₽</b></div>
+          <div class="addon"><span>Дополнительный круг правок сверх включённых</span><b>1 500 ₽</b></div>
+          <div class="addon"><span>Программа для клиники: 3 врача, 3 выпуска по пакету «Серия»</span><b>325 000 ₽</b></div>
+          <div class="addon"><span>Программа для клиники: 5 врачей</span><b>510 000 ₽</b></div>
+          <div class="addon"><span>Программа для клиники: 7 врачей</span><b>670 000 ₽</b></div>
+        </div>
+        <p class="project-note" style="margin:26px auto 14px;max-width:860px;font-size:16px">Ниже — расписание бюджета по каждому пакету: куда уходит каждая статья.</p>
+        <div class="tariff-sheets">
+          <details><summary><span>Расписание бюджета пакета «Выпуск» — <span class="money">95 000 ₽</span></span></summary><div class="details-body">
+          <div class="cost-sheet" role="table" aria-label="Расписание бюджета пакета «Выпуск» — 95 000 ₽">
+          <div class="cost-table">
+          <div class="cost-row cost-head" role="row"><div role="columnheader">№</div><div role="columnheader">Статья расходов</div><div role="columnheader">Объём</div><div role="columnheader">Сумма</div></div>
+          <div class="cost-row" role="row"><div>1</div><div>Редакционное исследование героя, индивидуальная концепция, структура и сценарный план интервью</div><div>1 комплекс</div><div>4 500 ₽</div></div>
+          <div class="cost-row" role="row"><div>2</div><div>Организация и проведение онлайн-интервью до 120 минут, включая техническую подготовку записи</div><div>1 интервью</div><div>3 000 ₽</div></div>
+          <div class="cost-row" role="row"><div>3</div><div>Обработка звука и монтаж основного выпуска: редакционный отбор, цвет, титры, заставка и оформление</div><div>1 выпуск</div><div>22 000 ₽</div></div>
+          <div class="cost-row" role="row"><div>4</div><div>Отбор и монтаж 10 коротких вертикальных роликов по 15–90 секунд, субтитры</div><div>10 роликов</div><div>12 000 ₽</div></div>
+          <div class="cost-row" role="row"><div>5</div><div>Графическое оформление: обложки роликов и финальные карточки</div><div>10 комплектов</div><div>4 000 ₽</div></div>
+          <div class="cost-row" role="row"><div>6</div><div>SEO-подготовка и сопроводительные тексты: заголовки, описания, ключевые слова и смысловые связки</div><div>1 комплект</div><div>6 000 ₽</div></div>
+          <div class="cost-row" role="row"><div>7</div><div>Размещение выпуска и роликов в действующей медиасети проекта: адаптация под площадку, публикация и ведение по графику</div><div>12 площадок</div><div>5 000 ₽</div></div>
+          <div class="cost-row" role="row"><div>8</div><div>Один общий круг правок по собранному пакету материалов</div><div>1 круг</div><div>3 000 ₽</div></div>
+          <div class="cost-row" role="row"><div>9</div><div>Авторский гонорар проекта: темы, смыслы и редакционная программа, в которую встраивается выпуск</div><div>10% пакета</div><div>9 500 ₽</div></div>
+          <div class="cost-row" role="row"><div>10</div><div>Организационно-продюсерское сопровождение: координация, согласования, контроль цикла</div><div>10% пакета</div><div>9 500 ₽</div></div>
+          <div class="cost-row" role="row"><div>11</div><div>Налог</div><div>6% пакета</div><div>5 700 ₽</div></div>
+          <div class="cost-row" role="row"><div>12</div><div>Развитие медиасети и резерв производства</div><div>—</div><div>10 800 ₽</div></div>
+          <div class="cost-row cost-total" role="row"><div></div><div>Итого</div><div>полный цикл</div><div>95 000 ₽</div></div>
+          </div></div></div></details>
+          <details><summary><span>Расписание бюджета пакета «Серия» — <span class="money">120 000 ₽</span></span></summary><div class="details-body">
+          <div class="cost-sheet" role="table" aria-label="Расписание бюджета пакета «Серия» — 120 000 ₽">
+          <div class="cost-table">
+          <div class="cost-row cost-head" role="row"><div role="columnheader">№</div><div role="columnheader">Статья расходов</div><div role="columnheader">Объём</div><div role="columnheader">Сумма</div></div>
+          <div class="cost-row" role="row"><div>1</div><div>Редакционное исследование героя, индивидуальная концепция, структура и сценарный план интервью</div><div>1 комплекс</div><div>4 500 ₽</div></div>
+          <div class="cost-row" role="row"><div>2</div><div>Организация и проведение онлайн-интервью до 120 минут, включая техническую подготовку записи</div><div>1 интервью</div><div>3 000 ₽</div></div>
+          <div class="cost-row" role="row"><div>3</div><div>Обработка звука и монтаж основного выпуска: редакционный отбор, цвет, титры, заставка и оформление</div><div>1 выпуск</div><div>22 000 ₽</div></div>
+          <div class="cost-row" role="row"><div>4</div><div>Отбор и монтаж 20 коротких вертикальных роликов по 15–90 секунд, субтитры</div><div>20 роликов</div><div>24 000 ₽</div></div>
+          <div class="cost-row" role="row"><div>5</div><div>Графическое оформление: обложки роликов и финальные карточки</div><div>20 комплектов</div><div>8 000 ₽</div></div>
+          <div class="cost-row" role="row"><div>6</div><div>SEO-подготовка и сопроводительные тексты: заголовки, описания, ключевые слова и смысловые связки</div><div>1 комплект</div><div>6 000 ₽</div></div>
+          <div class="cost-row" role="row"><div>7</div><div>Размещение выпуска и роликов в действующей медиасети проекта: адаптация под площадку, публикация и ведение по графику</div><div>12 площадок</div><div>5 000 ₽</div></div>
+          <div class="cost-row" role="row"><div>8</div><div>Один общий круг правок по собранному пакету материалов</div><div>1 круг</div><div>3 000 ₽</div></div>
+          <div class="cost-row" role="row"><div>9</div><div>Авторский гонорар проекта: темы, смыслы и редакционная программа, в которую встраивается выпуск</div><div>10% пакета</div><div>12 000 ₽</div></div>
+          <div class="cost-row" role="row"><div>10</div><div>Организационно-продюсерское сопровождение: координация, согласования, контроль цикла</div><div>10% пакета</div><div>12 000 ₽</div></div>
+          <div class="cost-row" role="row"><div>11</div><div>Налог</div><div>6% пакета</div><div>7 200 ₽</div></div>
+          <div class="cost-row" role="row"><div>12</div><div>Развитие медиасети и резерв производства</div><div>—</div><div>13 300 ₽</div></div>
+          <div class="cost-row cost-total" role="row"><div></div><div>Итого</div><div>полный цикл</div><div>120 000 ₽</div></div>
+          </div></div></div></details>
+          <details><summary><span>Расписание бюджета пакета «Авторский» — <span class="money">210 000 ₽</span></span></summary><div class="details-body">
+          <div class="cost-sheet" role="table" aria-label="Расписание бюджета пакета «Авторский» — 210 000 ₽">
+          <div class="cost-table">
+          <div class="cost-row cost-head" role="row"><div role="columnheader">№</div><div role="columnheader">Статья расходов</div><div role="columnheader">Объём</div><div role="columnheader">Сумма</div></div>
+          <div class="cost-row" role="row"><div>1</div><div>Редакционное исследование героя, индивидуальная концепция, структура и сценарный план интервью</div><div>1 комплекс</div><div>4 500 ₽</div></div>
+          <div class="cost-row" role="row"><div>2</div><div>Организация и проведение онлайн-интервью до 120 минут, включая техническую подготовку записи</div><div>1 интервью</div><div>3 000 ₽</div></div>
+          <div class="cost-row" role="row"><div>3</div><div>Обработка звука и монтаж основного выпуска: редакционный отбор, цвет, титры, заставка и оформление</div><div>1 выпуск</div><div>22 000 ₽</div></div>
+          <div class="cost-row" role="row"><div>4</div><div>Монтаж 20 роликов с поштучной приёмкой: ручная постановка точек входа и выхода, вычитка субтитров</div><div>20 роликов</div><div>70 000 ₽</div></div>
+          <div class="cost-row" role="row"><div>5</div><div>Индивидуальное оформление каждого ролика: обложка и финальная карточка под материал</div><div>20 комплектов</div><div>12 000 ₽</div></div>
+          <div class="cost-row" role="row"><div>6</div><div>SEO-подготовка и сопроводительные тексты: заголовки, описания, ключевые слова и смысловые связки</div><div>1 комплект</div><div>6 000 ₽</div></div>
+          <div class="cost-row" role="row"><div>7</div><div>Размещение выпуска и роликов в действующей медиасети проекта: адаптация под площадку, публикация и ведение по графику</div><div>12 площадок</div><div>5 000 ₽</div></div>
+          <div class="cost-row" role="row"><div>8</div><div>Два круга правок на каждый ролик</div><div>40 кругов</div><div>10 000 ₽</div></div>
+          <div class="cost-row" role="row"><div>9</div><div>Авторский гонорар проекта: темы, смыслы и редакционная программа, в которую встраивается выпуск</div><div>10% пакета</div><div>21 000 ₽</div></div>
+          <div class="cost-row" role="row"><div>10</div><div>Организационно-продюсерское сопровождение: координация, согласования, контроль цикла</div><div>10% пакета</div><div>21 000 ₽</div></div>
+          <div class="cost-row" role="row"><div>11</div><div>Налог</div><div>6% пакета</div><div>12 600 ₽</div></div>
+          <div class="cost-row" role="row"><div>12</div><div>Развитие медиасети и резерв производства</div><div>—</div><div>22 900 ₽</div></div>
+          <div class="cost-row cost-total" role="row"><div></div><div>Итого</div><div>полный цикл</div><div>210 000 ₽</div></div>
+          </div></div></div></details>
+        </div>
+        <p class="cost-source">Стоимость включает налоги. Цена программы для клиники действует при внесении 50% аванса в срок действия предложения.<br>Доступ к медиасети проекта, её аудитории и накопленной истории публикаций не тарифицируется — в расписании бюджета учтена только работа над вашим выпуском.</p>
         <details class="distribution" id="platforms"><summary>Где публикуем</summary><div class="details-body">
           <p>Сайт проекта, YouTube, RuTube, ВКонтакте, Одноклассники, Telegram, VC.ru, Яндекс Дзен, Pinterest, TikTok, Instagram* и Facebook*.</p>
           <p>Формат публикаций адаптируем под площадку. Размещение — при наличии законной и технической возможности.</p>
@@ -635,8 +747,8 @@
     </section>
     <section id="cycle" class="cycle">
       <div class="wrap">
-        <div class="section-head"><div class="eyebrow">Производственный цикл</div><h2>Почему полный цикл начинается от&nbsp;<span class="money">85 000 ₽</span></h2>
-          <p class="sub">Мы собрали производство в единую систему: один разговор превращается в большой выпуск, 30 коротких видео и месяц информационного присутствия.</p>
+        <div class="section-head"><div class="eyebrow">Производственный цикл</div><h2>Почему полный цикл начинается от&nbsp;<span class="money">95 000 ₽</span></h2>
+          <p class="sub">Мы собрали производство в единую систему: один разговор превращается в большой выпуск, до 20 коротких видео и месяц информационного присутствия.</p>
         </div>
         <div class="pipeline">
           <div class="phase">
@@ -651,7 +763,7 @@
           <div class="phase">
             <div class="phase-head"><b>Короткие форматы</b><span>этап 2 →</span></div>
             <ol class="steps">
-              <li>Поиск 30 самостоятельных смысловых фрагментов</li>
+              <li>Поиск самостоятельных смысловых фрагментов</li>
               <li class="ai">AI-нарезка <em class="tag">инструмент</em></li>
               <li class="human">Ручная проверка начала и окончания каждого ролика <em class="tag h">редактор</em></li>
               <li>Оформление и финальные карточки</li>
@@ -686,7 +798,7 @@
           <article class="model-card editorial">
             <span class="label">Базовая модель</span>
             <h3>Редакционный формат проекта</h3>
-            <span class="model-price"><small>от</small> 85 000 ₽</span>
+            <span class="model-price"><small>от</small> 95 000 ₽</span>
             <p>Участник приходит в уже работающую систему «Архитекторов здоровой улыбки». Команда проекта отвечает за сценарий, редакционную логику, монтаж, визуальную систему, короткие форматы, тексты и распространение.</p>
             <p>Мы учитываем пожелания героя и исправляем объективные недостатки. Финальные творческие решения принимаются внутри редакционной системы проекта.</p>
             <p class="stress">Именно такой подход позволяет сохранить большой объём производства при базовой стоимости участия.</p>
@@ -721,7 +833,7 @@
               <li>Отдельная визуальная система под корпоративный бренд участника вместо редакционной системы проекта.</li>
               <li>Несколько вариантов афиш и дизайна для выбора.</li>
               <li>Повторные циклы согласований после внесённого согласованного пакета правок.</li>
-              <li>Ручная переработка всего массива из 30 роликов под индивидуальные указания.</li>
+              <li>Ручная переработка всего массива роликов под индивидуальные указания.</li>
             </ul>
           </div>
         </div>
@@ -743,7 +855,7 @@
         </div>
         <div class="flow">
           <div class="flow-item"><h3>Поиск по имени</h3><p>Человек, который ищет специалиста перед визитом, находит не только карточку и отзывы, но и разговор, где врач объясняет свой подход.</p></div>
-          <div class="flow-item"><h3>Выход по графику</h3><p>30 роликов выходят по согласованному расписанию. Это присутствие на несколько недель, а не одна публикация.</p></div>
+          <div class="flow-item"><h3>Выход по графику</h3><p>Ролики выходят по согласованному расписанию. Это присутствие на несколько недель, а не одна публикация.</p></div>
           <div class="flow-item"><h3>Перелинковка</h3><p>Выпуски связаны между собой и с сайтом проекта. Каждый новый материал усиливает предыдущие.</p></div>
           <div class="flow-item"><h3>Длинный срок жизни</h3><p>Материал остаётся в поиске и медиатеке годами — в отличие от рекламы, которая заканчивается вместе с бюджетом.</p></div>
         </div>
@@ -752,7 +864,7 @@
             <ul class="checklist">
               <li>Один полный редакционный цикл подготовки и производства.</li>
               <li>Основной выпуск.</li>
-              <li>До 30 коротких вертикальных роликов.</li>
+              <li>До 20 коротких вертикальных роликов.</li>
               <li>Редакционная проверка роликов после автоматизированной нарезки.</li>
               <li>Оформление выпуска и роликов в визуальной системе проекта.</li>
               <li>Тексты и SEO-подготовка: заголовки, описания и ключевые слова для каждой площадки.</li>
@@ -846,7 +958,7 @@
           <p>Нет. Формат просветительский: врач объясняет свой подход и помогает человеку разобраться в теме. Мы не обещаем результатов лечения, не сравниваем клиники и не призываем к записи.</p>
         </div></details>
         <details><summary>Кому принадлежат материалы?</summary><div class="details-body">
-          <p>Вы получаете готовый выпуск и все 30 роликов и используете их без ограничений: на сайте клиники, в соцсетях, в презентациях и на конференциях. Проект оставляет материалы в открытой медиатеке.</p>
+          <p>Вы получаете готовый выпуск и все ролики пакета и используете их без ограничений: на сайте клиники, в соцсетях, в презентациях и на конференциях. Проект оставляет материалы в открытой медиатеке.</p>
         </div></details>
         <details><summary>Что согласовывается перед публикацией?</summary><div class="details-body">
           <p>До записи мы согласовываем тему и направление разговора. После производства участник получает материалы на просмотр и может одним сообщением собрать фактические и технические замечания. Мы исправляем ошибки и учитываем разумные корректировки в рамках редакционной системы проекта. После этого материалы выходят по согласованному графику. Если требуется новая творческая концепция, альтернативные версии или существенная пересборка уже подготовленного материала, такой объём оценивается отдельно.</p>
@@ -883,7 +995,7 @@
   </main>
   <footer class="footer"><div class="wrap footer-grid">
     <div><div class="brand">Архитекторы здоровой улыбки</div><p>Нурислам Пасяев — автор проекта.<br>Валентина Инкина — ведущая, продюсер, маркетолог.</p><p class="fine">Материалы проекта носят просветительский характер и не заменяют медицинскую консультацию.</p></div>
-    <div class="mini-links"><a href="https://arhismile.github.io/azu/" target="_blank" rel="noopener noreferrer">О проекте ↗</a><a href="#package">Состав и цена</a><a href="mailto:ar.history@yandex.com">ar.history@yandex.com</a><a href="#top">Наверх ↑</a></div>
+    <div class="mini-links"><a href="https://arhismile.github.io/azu/" target="_blank" rel="noopener noreferrer">О проекте ↗</a><a href="#package">Пакеты и цены</a><a href="mailto:ar.history@yandex.com">ar.history@yandex.com</a><a href="#top">Наверх ↑</a></div>
   </div></footer>
 </body>
 </html>
